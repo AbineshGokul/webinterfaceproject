@@ -1,0 +1,167 @@
+name: Deploy 10 Projects
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Attendance Tracker
+        working-directory: Attendance_Tracker
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/Attendance_Tracker
+          cp -r dist/* ../dist/Attendance_Tracker/
+
+      - name: Build Calculator
+        working-directory: Calculator
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/Calculator
+          cp -r dist/* ../dist/Calculator/
+
+      - name: Build Counter App
+        working-directory: CounterApp
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/CounterApp
+          cp -r dist/* ../dist/CounterApp/
+
+      - name: Build Hobbies
+        working-directory: Hobbies
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/Hobbies
+          cp -r dist/* ../dist/Hobbies/
+
+      - name: Build Portfolio
+        working-directory: Portfolio
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/Portfolio
+          cp -r dist/* ../dist/Portfolio/
+
+      - name: Build React
+        working-directory: React
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/React
+          cp -r dist/* ../dist/React/
+
+      - name: Build Report Card
+        working-directory: ReportCard
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/ReportCard
+          cp -r dist/* ../dist/ReportCard/
+
+      - name: Build School Dashboard
+        working-directory: Schoo_Dashboard/school_dashboard
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../../dist/Schoo_Dashboard
+          cp -r dist/* ../../dist/Schoo_Dashboard/
+
+      - name: Copy Student Profile
+        run: |
+          mkdir -p dist/Student_Profile-01
+          cp -r Student_Profile-01/* dist/Student_Profile-01/
+
+      - name: Build Todo
+        working-directory: Todo
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../dist/Todo
+          cp -r dist/* ../dist/Todo/
+
+      - name: Create Main Page
+        run: |
+          cat > dist/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>My Web Interface Projects</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 40px;
+              }
+              h1 {
+                margin-bottom: 30px;
+              }
+              a {
+                display: block;
+                width: 250px;
+                margin: 10px auto;
+                padding: 15px;
+                background: #173A34;
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>My Web Interface Projects</h1>
+            <a href="./Attendance_Tracker/">Attendance Tracker</a>
+            <a href="./Calculator/">Calculator</a>
+            <a href="./CounterApp/">Counter App</a>
+            <a href="./Hobbies/">Hobbies</a>
+            <a href="./Portfolio/">Portfolio</a>
+            <a href="./React/">React Project</a>
+            <a href="./ReportCard/">Report Card</a>
+            <a href="./Schoo_Dashboard/">School Dashboard</a>
+            <a href="./Student_Profile-01/">Student Profile</a>
+            <a href="./Todo/">Todo App</a>
+          </body>
+          </html>
+          EOF
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
