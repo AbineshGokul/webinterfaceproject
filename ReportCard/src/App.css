@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+.app > h1 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+/* Form */
+
+.report-form {
+  width: 420px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.report-form h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.report-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.report-form input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.report-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.report-form button:hover {
+  background: #1d4ed8;
+}
+
+/* Report Card */
+
+.report-card {
+  width: 700px;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.report-card h1 {
+  text-align: center;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.student-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.student-info p {
+  margin: 0;
+}
+
+.report-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-card th,
+.report-card td {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+}
+
+.report-card th {
+  background: #2563eb;
+  color: white;
+}
+
+.report-card tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.summary p {
+  margin: 8px 0;
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty p {
+  color: #64748b;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .report-form {
+    width: 100%;
+  }
+
+  .report-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .student-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

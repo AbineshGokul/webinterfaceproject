@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+}
+
+/* Main Dashboard */
+
+.dashboard {
+  min-height: 100vh;
+}
+
+/* Header */
+
+.header {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 20px;
+}
+
+/* Content */
+
+.content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+/* Student Card */
+
+.student-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+
+  display: flex;
+  gap: 25px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.photo-area {
+  display: flex;
+  align-items: flex-start;
+}
+
+.student-photo {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #1e3a8a;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-info h2 {
+  margin-bottom: 15px;
+}
+
+.student-info p {
+  margin: 10px 0;
+}
+
+/* Status */
+
+.status {
+  background: #f8fafc;
+
+  margin-top: 15px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+}
+
+.status h3 {
+  margin-bottom: 8px;
+}
+
+.eligible {
+  color: green;
+  font-weight: bold;
+}
+
+.not-eligible {
+  color: red;
+  font-weight: bold;
+}
+
+/* Subject Card */
+
+.subject-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card h2 {
+  color: #1e3a8a;
+
+  margin-bottom: 20px;
+}
+
+.subject-card p {
+  margin: 12px 0;
+}
+
+.subject-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.subject-card ul {
+  list-style-type: none;
+}
+
+.subject-card li {
+  background: #dbeafe;
+
+  margin: 8px 0;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+}
+
+/* Footer */
+
+.footer {
+  background: #1e3a8a;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 18px;
+
+  margin-top: 30px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .student-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+}

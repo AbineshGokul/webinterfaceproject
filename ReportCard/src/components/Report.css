@@ -1,0 +1,84 @@
+.report-form {
+  width: 400px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.report-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.report-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.report-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.report-form button:hover {
+  background: #1d4ed8;
+}
+
+.report-card {
+  width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.report-card h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.student-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.report-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-card th,
+.report-card td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.report-card th {
+  background: #2563eb;
+  color: white;
+}
+
+.summary {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f3f4f6;
+}
+
+.empty {
+  text-align: center;
+}

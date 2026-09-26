@@ -1,0 +1,114 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.input-box button {
+  background-color: #222;
+  color: white;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.summary div {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.summary h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.summary p {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+.student {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.present-btn {
+  background-color: green;
+  color: white;
+  margin-right: 5px;
+}
+
+.absent-btn {
+  background-color: red;
+  color: white;
+}
+
+.student strong {
+  min-width: 70px;
+}
+
+@media (max-width: 600px) {
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-box {
+    flex-direction: column;
+  }
+}
